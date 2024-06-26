@@ -1,0 +1,26 @@
+<form [formGroup]="championshipForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Championship Name:</label>
+    <input id="name" formControlName="name">
+    <div *ngIf="championshipForm.get('name')?.invalid && championshipForm.get('name')?.touched">
+      Championship name is required.
+    </div>
+  </div>
+
+  <div class="teams-container">
+    <div class="team-list">
+      <div class="team-card" *ngFor="let team of teams" (click)="selectTeam(team)">
+        {{ team.name }}
+      </div>
+    </div>
+
+    <div class="selected-teams">
+      <div class="team-slot" *ngFor="let team of selectedTeams; let i = index">
+        <div *ngIf="team">{{ team.name }}</div>
+        <div *ngIf="!team">Slot {{ i + 1 }}</div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="championshipForm.invalid">Create Championship</button>
+</form>

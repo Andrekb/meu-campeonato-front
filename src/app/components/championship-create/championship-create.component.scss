@@ -1,0 +1,30 @@
+.teams-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-list, .selected-teams {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 45%;
+  min-height: 200px;
+}
+
+.team-card {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: move;
+  background-color: #f9f9f9;
+}
+
+.team-slot {
+  padding: 10px;
+  margin: 5px;
+  border: 1px dashed #ccc;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
